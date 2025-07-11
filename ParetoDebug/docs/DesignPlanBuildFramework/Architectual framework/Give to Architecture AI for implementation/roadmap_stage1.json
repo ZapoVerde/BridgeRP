@@ -1,0 +1,44 @@
+[
+  {
+    "milestone_sequence_no": 1,
+    "milestone": "Core Loop MVP",
+    "description": "Establishes foundational simulation loop, tick clock, and actor event pipeline.",
+    "blocks": []
+  },
+  {
+    "milestone_sequence_no": 2,
+    "milestone": "Event Bus + Messaging",
+    "description": "Implements global event dispatch, logging hooks, and debug observation layers.",
+    "blocks": []
+  },
+  {
+    "milestone_sequence_no": 3,
+    "milestone": "Perception System",
+    "description": "Adds fog-of-war, zone-based vision, and tactical environment awareness.",
+    "blocks": []
+  },
+  {
+    "milestone_sequence_no": 4,
+    "milestone": "Combat System",
+    "description": "Establishes core combat interactions, including targeting, damage, and initiative.",
+    "blocks": []
+  },
+  {
+    "milestone_sequence_no": 5,
+    "milestone": "Skills and Mutation Framework",
+    "description": "Adds skill learning, hierarchical skills, technique evolution, and mutation logic.",
+    "blocks": []
+  },
+  {
+    "milestone_sequence_no": 6,
+    "milestone": "Graphical Interface",
+    "description": "Transitions from text to sprite-based rendering with full UI routing.",
+    "blocks": []
+  },
+  {
+    "milestone_sequence_no": 7,
+    "milestone": "Quests and Narrative Integration",
+    "description": "Enables procedural quest hooks, backstory links, and dialogue systems.",
+    "blocks": []
+  }
+]

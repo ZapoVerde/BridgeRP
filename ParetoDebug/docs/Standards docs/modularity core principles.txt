@@ -1,0 +1,126 @@
+═══════════════════════════════════════════════
+📘 MODULARITY CORE — FIVE PATTERNS + ENHANCERS
+═══════════════════════════════════════════════
+
+These are project-wide architecture principles.  
+They should be embedded at all levels: roadmap, phase plans, symbol headers, and actual runtime contracts.
+
+────────────────────────────────────
+1. 🔌 PLUGIN-CENTRIC REGISTRIES
+────────────────────────────────────
+
+Enables: Skills, AI behaviors, quests, effects, input modes
+
+Rule:
+- Never hardcode behavior into a system
+- Use central registries for dynamic resolution
+
+Roadmap Integration:
+- Each phase that introduces actions/skills must define registry entries
+- Define `SKILL_REGISTRY`, `AI_BEHAVIOR_REGISTRY`, etc. in `core/registries.py`
+
+AI Benefit:
+- AI can add new behavior by inserting registry entries only
+
+────────────────────────────────────
+2. 🎭 ENTITY TEMPLATE LAYER
+────────────────────────────────────
+
+Enables: Procedural content, reuse, world gen, testing
+
+Rule:
+- Every major entity (`Actor`, `Item`, `Zone`) gets a `template_id`
+- Templates are defined as JSON or tagged dicts
+
+Roadmap Integration:
+- Any phase that spawns entities must support `from_template(template_id)`
+- Template validation can be phase-gated (e.g., v1: no inheritance)
+
+AI Benefit:
+- AI can create new entity types by emitting JSON only
+
+────────────────────────────────────
+3. 🧭 UNIFIED WORLD STATE (LIVE SNAPSHOT)
+────────────────────────────────────
+
+Enables: Save/load, simulation diffing, rewind, traceability
+
+Rule:
+- All game state lives in a single `WORLD_STATE` dict
+- Systems do not directly reference global variables
+
+Roadmap Integration:
+- Phases using the tick loop or quest/faction systems must operate via `world_state` argument
+- Output is expected to be a modified or annotated copy
+
+AI Benefit:
+- AI can simulate game effects by modifying a world snapshot
+
+────────────────────────────────────
+4. 🪤 SOFT DATA CONTRACTS
+────────────────────────────────────
+
+Enables: Interchangeability, testing, safety, upgrades
+
+Rule:
+- No system expects internal structure from other systems
+- Only interacts with defined field names on shared objects
+
+Roadmap Integration:
+- Every system in a phase must declare "input expectations" and "output contracts"
+- Use header comments or `@contract` annotations
+
+AI Benefit:
+- AI understands what data must be present and what gets emitted, without tracing the full call chain
+
+────────────────────────────────────
+5. ⚙️ PHASE HOOK DISPATCHERS
+────────────────────────────────────
+
+Enables: Scalable tick logic, mods, toggles, extensibility
+
+Rule:
+- The tick loop has no embedded logic
+- Each tick phase is a list of registered functions
+
+Roadmap Integration:
+- Tick phases (`perception`, `action`, `cleanup`, `messaging`) call `dispatch_hooks("action", world_state)`
+- Each phase plan declares hook modules added
+
+AI Benefit:
+- AI can inject or remove systems by modifying a dispatcher list
+
+────────────────────────────────────
+🧠 CROSS-CUTTING ENHANCERS (MANDATORY)
+────────────────────────────────────
+
+These apply to **everything**, always.
+
+✅ Tags on all entities
+- `"tags": ["beast", "nocturnal", "dominion"]`
+- Used for filters, effects, AI logic, procedural generation
+
+✅ Flat references only (no object pointers)
+- `"target": "actor_23"`, not `target: actor_obj`
+- Portable and AI-friendly
+
+✅ JSON-first modeling
+- All entities, systems, and events should serialize cleanly
+- Makes save/load, AI editing, debugging, and UI bridges trivial
+
+────────────────────────────────────
+🏁 MVP MINIMUM COMMITMENT
+────────────────────────────────────
+
+To remain on track and modular without overbuilding:
+
+✅ Use registries from Day 1 for skills and actions  
+✅ Use flat dicts for all entities  
+✅ Route all output through `send_message()`  
+✅ Use `WORLD_STATE` for all shared data  
+✅ Mark placeholders with `@status: "deadend"`  
+✅ All debug statements include `ai_tags`  
+
+This preserves future options *without blocking current delivery*.
+
+═══════════════════════════════════════════════

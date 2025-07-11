@@ -1,0 +1,55 @@
+{
+"render_text": {
+"status": "DEAD-END",
+"module_sequence_no": 1,
+"block_sequence": 1,
+"block": "Rendering Foundation",
+"planned": true,
+"path": "core/render_text.py",
+"description": "Lowest-fidelity output for debugging and early output surface testing.",
+"inputs": "world_state, event_queue",
+"outputs": "plain string output, debug log entry",
+"ai_tags": [
+"UI",
+"actor_data",
+"runtime_behavior",
+"always"
+]
+},
+"render_ascii": {
+"status": "UPGRADEABLE",
+"module_sequence_no": 5,
+"block_sequence": 2,
+"block": "Rendering Upgrade",
+"replaces": "render_text",
+"planned": true,
+"path": "core/render_ascii.py",
+"description": "Mid-fidelity visual representation using tiles, walls, symbols.",
+"inputs": "world_state, map_state",
+"outputs": "ASCII visual grid, debug log entry",
+"ai_tags": [
+"UI",
+"actor_data",
+"runtime_behavior",
+"always"
+]
+},
+"render_sprite": {
+"status": "PERMANENT",
+"module_sequence_no": 12,
+"block_sequence": 3,
+"block": "Rendering Final",
+"replaces": "render_ascii",
+"planned": true,
+"path": "core/render_sprite.py",
+"description": "Final high-fidelity renderer using sprites and full graphical interface.",
+"inputs": "world_state, sprite_map",
+"outputs": "Frame buffer, debug log entry",
+"ai_tags": [
+"UI",
+"actor_data",
+"runtime_behavior",
+"always"
+]
+}
+}

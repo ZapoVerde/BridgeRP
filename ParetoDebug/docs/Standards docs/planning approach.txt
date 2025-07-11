@@ -1,0 +1,155 @@
+PROJECT EXECUTION FRAMEWORK — LAYERED PLANNING MODEL
+────────────────────────────────────────────────────
+
+Purpose:
+Provide a top-down execution model that turns confirmed architecture into scoped, modular, testable systems.
+Designed for very large projects where change is expected — but must be controlled.
+
+────────────────────────────────────────────────────
+OVERVIEW
+────────────────────────────────────────────────────
+
+The project is divided into **Stages**, each with clear strategic purpose and directional flow ("project sightlines").
+Each Stage breaks into **Phases** (\~2–3 hours of work), which break into concrete **Tasks**.
+The assistant only performs implementation once STRUCTURE mode has approved a phase.
+
+All major components must be marked as one of:
+
+* \[PERMANENT]   → Final form — not expected to change
+* \[UPGRADABLE]  → Working but intended for redesign or expansion
+* \[DEAD-END]    → Temporary placeholder behind adapters
+
+Tags are mandatory in code and planning artifacts.
+Change is allowed — but only within this structure.
+
+────────────────────────────────────────────────────
+LAYER 1 — PROJECT STAGES
+────────────────────────────────────────────────────
+
+Each Stage defines a major subsystem or capability (e.g., Logging System, Combat Engine, Save/Load). Only one Stage is in active Phase planning at a time. Future stages remain high-level until promoted
+
+Each Stage must include:
+
+* **Name**
+* **Goal / Narrative Function**
+* **Total Estimate (e.g., 18 hours)**
+* **FBD (Function Block Diagram)**
+
+  * Must show modules, control flow, I/O, adapters
+  * Surface contracts must be labeled clearly
+  * Directional arrows required for clarity
+
+Sightlines:
+
+* FBDs define the directional flow of logic across systems
+* Prevent cross-stage contamination or interface creep
+* Guide future evolution paths (upgrade surfaces, merge points)
+
+────────────────────────────────────────────────────
+LAYER 2 — PHASES (2–6 per stage)
+────────────────────────────────────────────────────
+
+Phases are only laid out for the next unimplemented project stage. Everything else is too far in the future. Each Phase completes one architectural or functional slice.
+No Phase may begin implementation until STRUCTURE mode approves and pseudo-code is locked.
+
+Each Phase must include:
+
+* **Name**
+* **Goal**
+* **Time Estimate (2–3 hours)**
+* **Tasks List (3–6 entries)**
+* **Lock-In Trigger**
+* **Pseudocode Scaffold**
+
+  * Function names
+  * Expected args/returns
+  * Adapter use (if cross-layer)
+  * Surface-level behavior or fallback logic
+
+Dependencies must be listed clearly (other phases, files, test surfaces).
+
+────────────────────────────────────────────────────
+LAYER 3 — TASKS (3–6 per phase)
+────────────────────────────────────────────────────
+
+Atomic development actions, scoped tightly and mode-bound.
+
+Each Task must include:
+
+* **Action Name** (Verb-object, e.g., "Define Debugger")
+* **Responsible Mode** (STRUCTURE or IMPLEMENTATION)
+* **Input or Dependency (optional)**
+* **Expected Output (file, function, result)**
+* **Follows:** (Optional, for chaining or trace)
+
+Tasks may not redefine phase surface or touch out-of-scope modules.
+Assistant-generated code must use tagged files and adapter entrypoints.
+
+────────────────────────────────────────────────────
+LAYER 4 — EXECUTION
+────────────────────────────────────────────────────
+
+Execution begins only after a Phase’s STRUCTURE plan is approved and lock-in is confirmed.
+
+Assistant will:
+
+* Implement only what the pseudocode and tasks declare
+* Use adapters for any cross-boundary access
+* Emit full files with required tags
+* Fail loudly if structure is violated
+
+No speculative behavior, new files, or structural adjustments are allowed during IMPLEMENTATION.
+
+────────────────────────────────────────────────────
+MODULARITY AND ADAPTIVE POLICY
+────────────────────────────────────────────────────
+
+Architecture is intentionally flexible — change is permitted **within the structure**.
+
+* \[UPGRADABLE] components may evolve with minimal friction
+* \[DEAD-END] modules must be isolated behind adapters
+* Phase or Stage structure may be updated if surfaced through STRUCTURE mode
+* Any module transitioning between tags must be re-approved
+
+Design change is not failure — but **plan drift is**.
+
+────────────────────────────────────────────────────
+TAGGING AND COMPLIANCE
+────────────────────────────────────────────────────
+
+Every file and plan artifact must declare:
+
+* \[PERMANENT], \[UPGRADABLE], or \[DEAD-END]
+* \[AI] if assistant-generated
+* \[ADAPTER] if routing logic
+
+All assistant work must:
+
+* Respect file boundaries and responsibilities
+* Obey adapter architecture
+* Pass tag validation and structural review
+
+────────────────────────────────────────────────────
+PLANNING ARTIFACT CHECKLIST
+────────────────────────────────────────────────────
+
+Each Stage must include:
+\[ ] Name + Goal
+\[ ] FBD with module flows
+\[ ] Duration estimate
+\[ ] Tag list and intent
+
+Each Phase must include:
+\[ ] Name + goal
+\[ ] Task list (3–6 items)
+\[ ] Pseudocode scaffold
+\[ ] Lock-in trigger
+\[ ] Dependencies listed
+
+Each Task must include:
+\[ ] Verb-object name
+\[ ] Responsible mode
+\[ ] Expected output
+\[ ] Optional Follows: field
+
+────────────────────────────────────────────────────

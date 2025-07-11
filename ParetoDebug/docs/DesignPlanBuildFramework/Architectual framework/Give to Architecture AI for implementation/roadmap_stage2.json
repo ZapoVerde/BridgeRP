@@ -1,0 +1,111 @@
+{
+  "milestones": [
+    {
+      "milestone_sequence_no": 1,
+      "milestone": "Core Simulation Loop",
+      "description": "Establish the heartbeat of the simulation, including tick control, random seed stability, and minimal world state evolution.",
+      "blocks": [
+        {
+          "block_sequence_no": 1,
+          "block": "Tick Clock Foundation",
+          "description": "Initialize deterministic tick advancement, including tick rate definition and time counter in world state.",
+          "milestone": "Core Simulation Loop",
+          "milestone_sequence_no": 1,
+          "dependencies": [],
+          "destructive_replacements": [],
+          "status": "complete",
+          "conceptual_level_outputs": [
+            "deterministic tick controller",
+            "configurable tick rate",
+            "tick counter in world state"
+          ]
+        },
+        {
+          "block_sequence_no": 2,
+          "block": "Random Seed Manager",
+          "description": "Enable reproducible world behavior by installing a single-seed random system that feeds simulation state.",
+          "milestone": "Core Simulation Loop",
+          "milestone_sequence_no": 1,
+          "dependencies": [],
+          "destructive_replacements": [],
+          "status": "complete",
+          "conceptual_level_outputs": [
+            "RNG system with single-seed reproducibility",
+            "shared random context across systems"
+          ]
+        }
+      ]
+    },
+    {
+      "milestone_sequence_no": 2,
+      "milestone": "Event Dispatch System",
+      "description": "Introduce a runtime event bus for loosely coupled communication between systems. Enables publishing and subscribing to system-level messages.",
+      "blocks": [
+        {
+          "block_sequence_no": 3,
+          "block": "Event Bus Core",
+          "description": "Create a publish-subscribe event system with tag-based routing and topic enforcement. Used for inter-module communication.",
+          "milestone": "Event Dispatch System",
+          "milestone_sequence_no": 2,
+          "dependencies": [],
+          "destructive_replacements": [],
+          "status": "complete",
+          "conceptual_level_outputs": [
+            "tag-based event publishing system",
+            "runtime message routing"
+          ]
+        },
+        {
+          "block_sequence_no": 4,
+          "block": "Tick Event Integration",
+          "description": "Augment tick system to emit TickEvents on every advancement, routed via the event bus.",
+          "milestone": "Event Dispatch System",
+          "milestone_sequence_no": 2,
+          "dependencies": ["Tick Clock Foundation", "Event Bus Core"],
+          "destructive_replacements": ["Tick Clock Foundation"],
+          "status": "complete",
+          "conceptual_level_outputs": [
+            "TickEvent emission",
+            "tick-clock integrated with event bus"
+          ]
+        }
+      ]
+    },
+    {
+      "milestone_sequence_no": 3,
+      "milestone": "Debugging Infrastructure",
+      "description": "Lay down a structured debugging layer with tagged output and runtime trace visibility.",
+      "blocks": [
+        {
+          "block_sequence_no": 5,
+          "block": "Pareto Debug Core",
+          "description": "Install base debugging hooks with support for structured logging, MECE tag compliance, and traceable runtime visibility.",
+          "milestone": "Debugging Infrastructure",
+          "milestone_sequence_no": 3,
+          "dependencies": [],
+          "destructive_replacements": [],
+          "status": "complete",
+          "conceptual_level_outputs": [
+            "JSONL debug logs",
+            "context-tagged runtime visibility",
+            "trace ID propagation"
+          ]
+        },
+        {
+          "block_sequence_no": 6,
+          "block": "Event Debug Integration",
+          "description": "Enable debugging on event publish/subscribe flows, using tagged logs and tick-event tracing.",
+          "milestone": "Debugging Infrastructure",
+          "milestone_sequence_no": 3,
+          "dependencies": ["Event Bus Core", "Pareto Debug Core"],
+          "destructive_replacements": [],
+          "status": "planned",
+          "conceptual_level_outputs": [
+            "event payload logging",
+            "tick-to-event trace visibility"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+▓▓▓ PHASE 3 — AUTO TRACE DECORATOR (PSEUDO-CODE PLAN) ▓▓▓
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+This phase introduces the `@debug_trace` decorator to automatically instrument function
+calls with debug logs, including entry/exit, args, return values, and exceptions.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+■ MODULE: TRACE DECORATORS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Purpose:
+- Eliminate boilerplate debug calls in logic functions
+- Automatically capture entry, exit, errors, and trace linkage
+
+Structure:
+- Decorator: @debug_trace(context="...")
+  → Logs "function_entry" with args
+  → Logs "function_exit" with return value
+  → On exception, logs "error_occurred" with traceback
+
+Fields:
+- context (required): for Debugger
+- trace_id (optional): threads through kwargs
+
+Tags:
+- [UTILITY], [WRAPPER], [AI], [DIAGNOSTIC]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+■ BEHAVIOR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Entry log:
+  → action: "function_entry"
+  → state: {"args": ..., "kwargs": ...}
+- Exit log:
+  → action: "function_exit"
+  → state: {"return": ...}
+- Error log:
+  → action: "error_occurred"
+  → data: {"exception": str(e)}, "traceback": formatted_tb
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+■ EXAMPLE (PSEUDO)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+@debug_trace(context="combat/resolve")
+def resolve_attack(actor, target, trace_id=None):
+    # Normal logic
+    return result
+
+→ On call, logs entry with args
+→ On success, logs return value
+→ On failure, logs error with traceback and trace_id
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -1,0 +1,59 @@
+# Entity Graph Code Contract
+# [AI]
+# [PERMANENT]
+# Generated under governance review
+# Must follow locked scope boundaries and modularity principles
+
+"""Defines permitted usage and limitations of the Entity Graph (EG) system.
+The EG provides post-implementation structural analysis and must not interfere with forward planning or phase execution.
+
+@tags: ["system", "event_data", "trigger_logic", "always"]
+@status: "permanent"
+"""
+
+EG Purpose and Scope
+
+The Entity Graph is an automated index of project symbols and metadata
+
+It exists to support:
+• Debugging
+• Iterative agile code refactoring
+• Cross-phase validation and drift detection
+• Refactor candidate discovery
+
+It is not a runtime or design dependency
+
+Usage Restrictions
+
+The EG must not be used during:
+• Phase planning or pseudocode design
+• MVP design decisions or architectural commitments
+
+No Phase Plan may be invalidated based on EG output
+
+No code may depend on the structure of the EG
+
+Permitted Use Cases
+
+The EG may be used in the following post-facto workflows:
+• Shadow Governance Report generation
+• Refactor reviews and system hygiene audits
+• Dead code analysis
+• Cross-module test coverage review
+• Debugging support and runtime context analysis
+
+Debug and Logging Compliance
+
+Any EG-based audit or tool must use the Pareto Debugger for structured output
+
+All debug logs from EG interaction must include:
+• context: "entity_graph"
+• trace_id
+• ai_tags covering ["system", "event_data", ..., "runtime_behavior"]
+
+Contract Status
+
+This contract is permanent and locked
+
+Updates must be proposed via explicit governance change request
+

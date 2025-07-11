@@ -1,0 +1,333 @@
+# 📘 FACILITATED PLANNING PROCESS
+
+This document defines the structured approach taken by the Facilitator AI to extract, organize, and structure software development context from a single user. It captures all inputs necessary to scaffold a project architecture using AI.
+
+────────────────────────────────────────────────────────────────
+
+## 🚽 PHASE 0 — PROJECT ORIGINATION
+
+Covers the earliest steps before committing to a formal skeleton or architecture. Used to elicit, frame, and structure the initial idea.
+
+────────────────────────────────────────────────────────────────
+
+### ✅ Phase 0.0 — Initiate
+
+* Prompt user: "What are you trying to build?"
+* Expect a natural language explanation of goal, feature, or dream
+* Store initial vision in `user_vision.md`
+* If unserious or too vague, prompt again or exit early
+
+### ✅ Phase 0.1 — Design Principles Declaration
+
+* Ask user what principles they want the project to embody (e.g. modularity, minimalism, portability, testability)
+* Offer common examples and clarify tradeoffs
+* Store selections in `design_principles.json`
+* These principles will inform later skeleton selection, constraint evaluation, and audit rules
+
+📌 AI GUIDANCE — What is a Skeleton?
+
+In this context, a **skeleton** refers to a high-level structural scaffold of a software system. It establishes major behavioral patterns, control flow, and data handling philosophies *before* detailed architecture is created.
+
+Skeletons are not tied to file structures or code modules. They describe posture, control orientation, and core mechanics.
+
+Use the framing interview and checklist to recommend a starting skeleton and guide the user toward a compatible structure. If ambiguity remains, present 3–5 clear candidates with pros/cons. Otherwise, silently auto-select and confirm alignment only if contradictions arise.
+
+✅ NEW PRINCIPLE — Multiplicity with Silent Override
+
+* Always provide multiple viable, aligned options when tradeoffs exist
+* Only auto-select silently when one option is clearly superior
+* Avoid unnecessary dramatization or decision fatigue
+* Preserve user agency where it adds meaningful value
+
+### ✅ Phase 0.2 — Skeleton Framing Interview
+
+Short guided interview to establish framing context and prepare for checklist auto-fill.
+
+#### 1. Unguided Intake
+
+Ask:
+
+* What are you trying to build?
+* What kind of inputs/outputs or users does it have?
+* What parts are already decided?
+* What's the hardest part to figure out right now?
+* Are there any inspirations or reference systems?
+
+Hold in memory during checklist recommendation. Discard if context is lost.
+
+#### 2. Answer Recommendation Pass
+
+For each checklist item:
+
+* Suggest a recommended value
+* Justify based on user input and known best practices
+* Offer pros/cons and ask for confirmation
+
+Do not store to disk unless explicitly requested. If context is lost, simply restart the interview and pass.
+
+### ⏳ Phase 0.3 — Skeleton Finalization
+
+* Confirm all checklist items have been reviewed, accepted, or overridden by user
+* Assemble full `skeleton_profile.json` representing core scaffolding expectations
+* Provide user with summary of strengths/risks implied by current structure
+* Allow one final pass to adjust based on newly realized concerns
+* Save: `docs/skeleton_selection/skeleton_profile.json`
+
+### ✅ Phase 0.3.5 — Skeleton Best Practice Anchoring
+
+Use the confirmed `skeleton_profile.json` and declared `design_principles.json` to infer or retrieve common best practices, architectural conventions, and behavioral expectations. These are not user-facing — they inform all downstream logic and probing.
+
+#### 🤖 AI FACILITATOR LOOP (Silent unless prompted)
+
+1. **Look up best practices**
+
+   * Use internal knowledge or stored profiles
+   * Filter practices by skeleton type and principles
+   * If no standard exists, infer expected posture
+
+2. **Anticipate known weaknesses**
+
+   * Identify common failure zones: async bugs, persistence, race conditions
+   * Internally flag these for later audit and debugging hooks
+
+3. **Radiate systemically from the core**
+
+   * Start with the core loop and state model
+   * Ask: “What must exist for this to function?”
+   * Expand outward through structural dependencies
+
+4. **Lens pass — one sweep per domain** For each lens:
+
+   * 📤 Inputs: What feeds into this system?
+   * 🧠 Process: What must it compute or transform?
+   * 📥 Outputs: What is emitted, and where does it go?
+   * 🛡️ Dependencies: What must exist before it?
+   * 🧪 Failure modes: What breaks without it?
+
+5. **Map implied capability needs**
+
+   * Store in a working memory table (not user-visible)
+   * Use to guide completeness checks during MFE and beyond
+
+#### LENS TYPES
+
+* `core_loop`
+* `state_model`
+* `input_handling`
+* `output_rendering`
+* `actor_behavior`
+* `world_model`
+* `diagnostics`
+
+🤖 If the user expresses interest, reveal recommendations with optional involvement. Otherwise proceed silently.
+
+### 🔁 FACILITATOR LOOP 1 — Skeletal Completeness Check
+
+> **Loop ID**: `fac_loop_1`
+> **Purpose**: Ensure the chosen skeleton is functionally and structurally complete before moving on to detailed ideation or architecture.
+> **Mode**: Silent unless prompted.
+
+#### 🔓 Entry Conditions:
+
+* `skeleton_profile.json` exists and is stable
+* `design_principles.json` exists
+* At least one radiated core capability has been inferred
+
+#### 🔁 Cycle Behavior:
+
+1. Use lens passes to examine system from multiple perspectives
+2. Radiate outward from core loop/state model
+3. Identify required subsystems, inputs/outputs, and known gaps
+4. Infer debug and diagnostic scaffolding
+5. Flag failure zones and mitigation absence
+6. Recheck capability table for completeness
+
+#### ✅ Exit Conditions:
+
+* All critical lenses produce at least one capability
+* No unanchored or disconnected subsystems
+* All critical failure modes have mitigation paths
+* Debugging hooks or diagnostics present
+* AI confidence ≥ 80%
+* No unresolved architectural red flags (e.g. async with no scheduler)
+* If not met, re-enter pass or defer completion to MFE tagging
+
+---
+
+### ✅ Phase 0.6 — Ideation Bank Capture
+
+Capture all user-generated implementation ideas, feature goals, or conceptual mechanics. Decompose into atomic chunks, tag with MECE categories, and optionally slot to a skeleton region.
+
+* Source may be: interviews, design journals, prompts, or chat logs
+* Each idea is stored like a post-it note: one standalone, minimal concept
+* Systematically abstract and tag each idea
+
+📌 Tagging Rules (from `tags_vocab.json`):
+
+* Must include: `domain`, `data_affinity`, `semantic_role`
+* Plus one of: `debug_visibility`, `trigger_surface`, or `actor_mindset`
+* Now also includes: `skeleton_slot`
+
+🧠 Facilitator Behavior:
+
+* Auto-extract ideas from dense sources
+* Tag and slot based on current skeleton
+* Defer ambiguous chunks for clarification
+* Detect and flag contradictions or overlaps
+* Store in bursts to manage token limits
+* Abstract away excessive detail; user can re-expand later
+
+🧪 Token Management:
+
+* Use batch mode (N entries per parse)
+* If interrupted, safely resume
+* Skip redundant or malformed chunks
+
+📄 Artifact: `docs/ideation/ideation_bank.jsonl`
+
+---
+
+### 🔁 FACILITATOR LOOP 2 — Ideation Collection
+
+> **Loop ID**: `fac_loop_2`
+> **Purpose**: Extract and transform dense user design content into manageable, tagged, atomic ideas
+> **Mode**: Batch parse → tag → review until input exhausted or user halts.
+
+#### 🔓 Entry Conditions:
+
+* Skeleton profile and design principles finalized
+
+#### 🔁 Cycle Behavior:
+
+1. Parse raw material (chat logs, journals, brainstorms)
+2. Chunk into post-it sized atomic ideas
+3. Auto-assign MECE tags and skeleton region
+4. Abstract excessive verbosity
+5. Silently add `value_guess` (0.0–1.0) as an AI-estimated importance score
+6. Check for conflicts, redundancy, ambiguity
+
+#### ✅ Exit Conditions:
+
+* All known sources parsed
+* No malformed or ambiguous tokens remain
+* AI confidence ≥ 85% on tagging integrity
+* Manual override or early termination OK if resuming is easy
+
+---
+
+### 🔁 FACILITATOR LOOP 3 — Ideation Reconciliation & Costing
+
+> **Loop ID**: `fac_loop_3`
+> **Purpose**: Cluster, clean, and prioritize ideation bank contents for downstream design and planning
+> **Mode**: Mixed: user-assisted (for value) + AI-led (for clustering and costing)
+
+---
+
+### ✅ Phase 0.71 — Triage & Consolidation
+
+* Cluster by `skeleton_slot`
+* Merge duplicates → `merged_duplicates: [idea_003, idea_014, ...]`
+* Flag soft contradictions → `contradiction_cluster_id`
+* Promote viable entries: `status: ranked`
+* Ensure `confidence ≥ 0.85`
+
+### ✅ Phase 0.72 — Cost Assignment
+
+* Assign continuous float scores:
+
+```json
+"cost_estimate": {
+  "authoring": 0.4,
+  "runtime": 0.7
+}
+```
+
+* Cost based on:
+
+  * data\_affinity complexity
+  * runtime exposure (tick, memory, visibility)
+  * semantic\_role impact
+  * tag cross-section (e.g. world\_model + transformation = high)
+* No ideas filtered due to cost
+
+### ✅ Phase 0.73 — Skeleton Fit Analysis
+
+* Analyze each idea's alignment with current skeleton
+* Assign advisory field:
+
+```json
+"skeleton_fit": {
+  "label": "neutral",
+  "score": 0.5
+}
+```
+
+* Used for Phase 0.8 routing only
+* Forced ideas grouped for later review
+
+---
+
+#### 🔓 Entry Conditions:
+
+* `ideation_bank.jsonl` populated with ≥ 10 tagged items from Phase 0.6
+
+#### 🔁 Cycle Behavior:
+
+1. Auto-group by skeleton region
+2. Merge duplicates and remove contradictions
+3. Score cost using architectural and runtime lenses
+4. Score skeleton fit using structural alignment logic
+5. Add `reviewed` tag for approved entries
+6. Retain `value_guess` from Phase 0.6
+7. Await `user_value` overlay where applicable
+
+#### ✅ Exit Conditions:
+
+* Every idea has:
+
+  * `cost_estimate` (float)
+  * `skeleton_fit` (`label` + `score`)
+  * `value_guess`
+* Contradictions resolved or deferred
+* Redundant ideas merged
+* Status set to `ranked`
+
+🔧 Output (appended to `ideation_bank.jsonl`):
+
+* `status`: "ranked"
+* `cost_estimate`: float values
+* `skeleton_fit`: object
+* `value_guess`: float (from 0.6)
+* `user_value`: optional
+* `merged_duplicates`, `contradiction_cluster_id`: optional
+
+> **Loop ID**: `fac_loop_3`
+> **Purpose**: Cluster, clean, and prioritize ideation bank contents for downstream design and planning
+> **Mode**: Mixed: user-assisted (for value) + AI-led (for clustering and costing)
+
+#### 🔓 Entry Conditions:
+
+* `ideation_bank.jsonl` populated with ≥ 10 tagged items
+
+#### 🔁 Cycle Behavior:
+
+1. Auto-group by skeleton region
+2. Merge duplicates and remove contradictions
+3. Score cost using architectural and runtime lenses
+4. Request user input for value
+5. Add `reviewed` tag for approved entries
+
+#### ✅ Exit Conditions:
+
+* Every idea has a cost + value
+* Contradictions resolved or deferred
+* Redundant ideas merged
+* All groups show reviewed entries
+
+🔧 Output (appended to `ideation_bank.jsonl`):
+
+* `cost_estimate`: structured dict with axes
+* `user_value`: optional user-supplied
+* `contradiction_cluster_id`: optional linkage
+* `merged_duplicates`: list of merged idea\_ids
+* `status`: promoted from `proposed` to `ranked`

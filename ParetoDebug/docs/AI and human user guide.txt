@@ -1,0 +1,162 @@
+=================================================================
+PARETO DEBUGGING FRAMEWORK – PRACTICAL USER GUIDE
+Plain-language instructions for HUMANS (how to install, run, and
+extend) and for AIs (rules you must obey when generating code).
+
+WHAT IS IT?
+
+A lightweight, file-based debug/telemetry layer that writes one
+JSON object per line (.jsonl) into debug_logs/.
+• Structured: every entry has timestamp, context, action, data.
+• Trace-aware: UUIDs tie multi-function flows together.
+• Self-validated: bad logs raise errors immediately.
+• Tag-validated: ai_tags must use the shared MECE vocabulary.
+
+Useful when you want machine-readable runtime traces without
+introducing heavyweight logging stacks.
+
+QUICK INSTALL (≈ 2 minutes)
+
+System requirement Python 3.11+ and pytest (for tests).
+
+Copy / clone these directories into your project root:
+
+debug_core/ adapters/ debug_logs/ tests/ config.py
+
+(Keep the folder names identical.)
+
+Ensure this is now your tree:
+
+mygame/
+├─ adapters/debug_adapter.py
+├─ debug_core/…
+├─ debug_logs/ (empty to start)
+├─ tests/…
+└─ config.py (contains DEBUG_MODE = True)
+
+Tell Python where to find the code. Options:
+• Launch scripts/tests from the project root, or
+• export PYTHONPATH=path/to/mygame (Unix/mac)
+• set PYTHONPATH=path\to\mygame (Windows CMD)
+
+Run the smoke tests:
+
+pytest -q → should report “15 passed”.
+
+Done. Logs now go to debug_logs/* when your code calls the
+Debugger (see next section).
+
+BASIC RUNTIME USE
+
+from adapters.debug_adapter import get_debugger
+
+dbg = get_debugger("combat/resolve") # choose a context
+tid = "uuid-string-from-trace_utils" # optional trace id
+
+dbg(
+action = "roll_damage",
+data = {"dice":[4,5]},
+state = {"hp_before":12,"hp_after":3},
+ai_tags = ["combat","actor_data","mvp","runtime_behavior"],
+trace_id = tid,
+print_console=False
+)
+
+That single call will append one JSON line to
+debug_logs/combat_resolve.jsonl
+
+Open the file with any viewer; each line is parse-ready JSON.
+
+ZERO-BOILERPLATE DECORATOR
+
+from adapters.debug_adapter import debug_trace
+
+@debug_trace(context="ai/decision")
+def pick_action(actor, trace_id=None):
+# entry, exit, and any exceptions auto-logged
+...
+
+...
+
+TAGS – THE ONLY RULE YOU MUST REMEMBER
+
+ai_tags is a list that MUST include at least one tag from
+each vocabulary group defined in debug_core/tags_vocab.json:
+
+domain combat | movement | …
+data_affinity actor_data | item_data | …
+scope_horizon prototype | mvp | …
+semantic_role runtime_behavior | data_schema | …
+
+If any tag is missing or misspelled, the Debugger raises
+ValueError immediately.
+
+Tip: copy-paste the ready-made list used in tests:
+
+css
+Copy
+Edit
+["combat","actor_data","mvp","runtime_behavior"]
+ERROR LOGGING PATTERN
+
+try:
+...
+except Exception as e:
+dbg(
+action="error_occurred",
+data = {"exception": str(e)},
+state= {"traceback": traceback.format_exc()},
+ai_tags=["UI","actor_data","mvp","runtime_behavior"],
+trace_id=tid
+)
+raise
+
+No print() – ever.
+
+HOW THE AI MUST USE IT (assistant code contract)
+
+• Never emit print() for runtime info.
+• Every new function must include a one-line docstring AND a
+@tags: block with four MECE tags.
+• All debug calls must supply context, action, tags, and at least
+data or state.
+• action must look like verb_noun.
+• If you raise an exception, you must log it via “error_occurred”.
+• If you break any rule, prepend “[CONTRACT VIOLATION]” in the
+output so the human knows something slipped.
+
+TROUBLESHOOTING CHECKLIST
+
+❑ FileNotFoundError for tags_vocab.json
+→ copy debug_core/tags_vocab.json into correct folder.
+❑ Debugger returns None in tests
+→ DEBUG_MODE is False in config.py.
+❑ ValueError: ai_tags must be …
+→ list is missing a group or has an unknown tag.
+❑ Verb_noun rule fails
+→ rename action like “calculate_score” not “calcScore”.
+❑ Tests fail to import adapters
+→ add project root to PYTHONPATH or run pytest from root.
+
+HANDY ONE-LINERS
+
+Generate new trace id:
+python - <<<'import uuid,os;print(uuid.uuid4())'
+
+Tail live log (Unix/mac):
+tail -f debug_logs/combat_resolve.jsonl
+
+Tail live log (Windows CMD):
+powershell -command "Get-Content debug_logs\combat_resolve.jsonl -Wait"
+
+Run all tests:
+pytest -q
+
+NEXT EXTENSIONS (OPTIONAL)
+
+• tag_autocomplete.py – suggest tags from vocabulary
+• CI script to scan for disallowed print() or missing @tags
+• Timestamp upgrade: switch utcnow() → datetime.now(datetime.UTC)
+
+That’s the full operational picture – install, log, tag, test,
+and extend.
