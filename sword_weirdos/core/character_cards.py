@@ -5,10 +5,12 @@ import traceback
 from typing import Optional
 from ParetoDebug.adapters.debug_adapter import get_debugger, generate_trace_id
 
-# @tags: ["system", "char_data", "runtime_behavior", "init"]
-# @status: "stable"
+
 def load_character(file_path: str) -> dict:
-    """Loads character data from a JSON file."""
+    """Loads character data from a JSON file.
+    @tags: ["system", "char_data", "runtime_behavior", "init"]
+    @status: "stable"
+    """
     trace_id = generate_trace_id()
     dbg = get_debugger("core/character_cards")
 
@@ -41,10 +43,12 @@ def load_character(file_path: str) -> dict:
         )
         return {}
 
-# @tags: ["system", "char_data", "runtime_behavior", "input"]
-# @status: "stable"
+
 def save_character(file_path: str, data: dict):
-    """Saves character data to a JSON file."""
+    """Saves character data to a JSON file.
+    @tags: ["system", "char_data", "runtime_behavior", "input"]
+    @status: "stable"
+    """
     trace_id = generate_trace_id()
     dbg = get_debugger("core/character_cards")
 
@@ -66,10 +70,12 @@ def save_character(file_path: str, data: dict):
             trace_id=trace_id
         )
 
-# @tags: ["system", "status_data", "runtime_behavior", "input"]
-# @status: "stable"
+
 def apply_status(character: dict, status: str, trace_id: Optional[str] = None):
-    """Adds a status to the character if not already present."""
+    """Adds a status to the character if not already present.
+    @tags: ["system", "status_data", "runtime_behavior", "input"]
+    @status: "stable"
+    """
     trace_id = trace_id or generate_trace_id()
     dbg = get_debugger("core/character_cards")
 
@@ -85,10 +91,12 @@ def apply_status(character: dict, status: str, trace_id: Optional[str] = None):
             trace_id=trace_id
         )
 
-# @tags: ["system", "char_data", "runtime_behavior", "input"]
-# @status: "stable"
+
 def update_stat(character: dict, field: str, delta: int, trace_id:Optional[str] = None):
-    """Modifies a stat by a delta value."""
+    """Modifies a stat by a delta value.
+    @tags: ["system", "char_data", "runtime_behavior", "input"]
+    @status: "stable"
+    """
     trace_id = trace_id or generate_trace_id()
     dbg = get_debugger("core/character_cards")
 

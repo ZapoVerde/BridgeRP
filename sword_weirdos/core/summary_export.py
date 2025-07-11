@@ -3,10 +3,12 @@
 from typing import Optional
 from ParetoDebug.adapters.debug_adapter import get_debugger, generate_trace_id
 
-# @tags: ["system", "char_data", "render_contract", "input"]
-# @status: "stable"
+
 def generate_summary(character: dict, trace_id: Optional[str] = None) -> str:
-    """Generates a formatted character status summary block for display."""
+    """Generates a formatted character status summary block for display.
+    @tags: ["system", "char_data", "render_contract", "input"]
+    @status: "stable"
+    """
     trace_id = trace_id or generate_trace_id()
     dbg = get_debugger("core/summary_export")
 

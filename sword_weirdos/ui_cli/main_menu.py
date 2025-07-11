@@ -16,10 +16,12 @@ from ParetoDebug.adapters.debug_adapter import get_debugger, generate_trace_id
 CHARACTER_PATH = "sword_weirdos/data/characters/karra.json"
 LOOT_TABLE_PATH = "sword_weirdos/data/loot_table.json"
 
-# @tags: ["system", "char_data", "runtime_behavior", "input"]
-# @status: "stable"
+
 def main_menu(trace_id: Optional[str] = None):
-    """Launches the main tracker menu for character interaction."""
+    """Launches the main tracker menu for character interaction.
+    @tags: ["system", "char_data", "runtime_behavior", "input"]
+    @status: "stable"
+    """
     trace_id = trace_id or generate_trace_id()
     dbg = get_debugger("ui_cli/main_menu")
 
@@ -106,3 +108,15 @@ def main_menu(trace_id: Optional[str] = None):
 
         else:
             print("Invalid choice. Try again.")
+
+# === TEMPORARY ENTRYPOINT (PHASE 1 ONLY) ===
+# This block enables direct CLI execution during MVP testing.
+# It will be removed in Phase 2 when the unified pipeline is introduced.
+# Run using: python -m sword_weirdos.ui_cli.main_menu
+
+from ParetoDebug.adapters.debug_adapter import generate_trace_id
+from sword_weirdos.ui_cli.main_menu import main_menu
+
+if __name__ == "__main__":
+    trace_id = generate_trace_id()
+    main_menu(trace_id)

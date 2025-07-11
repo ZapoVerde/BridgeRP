@@ -5,10 +5,12 @@ from copy import deepcopy
 from ParetoDebug.adapters.debug_adapter import get_debugger, generate_trace_id
 from typing import Optional
 
-# @tags: ["inventory", "item_data", "runtime_behavior", "input"]
-# @status: "stable"
+
 def roll_loot(loot_table: dict, trace_id:  Optional[str] = None) -> dict:
-    """Selects a random item from the provided loot table."""
+    """Selects a random item from the provided loot table.
+    @tags: ["inventory", "item_data", "runtime_behavior", "input"]
+    @status: "stable"
+    """
     trace_id = trace_id or generate_trace_id()
     dbg = get_debugger("core/loot_engine")
 

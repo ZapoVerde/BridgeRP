@@ -1,5 +1,5 @@
 {
-  "timestamp": "20250711_071637",
+  "timestamp": "20250711_094124",
   "project_name": "sword_weirdos",
   "graph": {
     "_init_": {
@@ -130,7 +130,12 @@
       "fqname": "core.character_cards.load_character",
       "type": "function",
       "description": "Loads character data from a JSON file.",
-      "tags": [],
+      "tags": [
+        "system",
+        "char_data",
+        "runtime_behavior",
+        "init"
+      ],
       "source_file": "core\\character_cards.py",
       "test_coverage": false,
       "docstring_present": true,
@@ -141,14 +146,19 @@
         "module": "core.character_cards",
         "name": "load_character",
         "type": "function",
-        "lineno": 10,
+        "lineno": 9,
         "source_file": "core\\character_cards.py",
         "description": "Loads character data from a JSON file.",
-        "docstring_full": "Loads character data from a JSON file.",
-        "tags": [],
+        "docstring_full": "Loads character data from a JSON file.\n@tags: [\"system\", \"char_data\", \"runtime_behavior\", \"init\"]\n@status: \"stable\"",
+        "tags": [
+          "system",
+          "char_data",
+          "runtime_behavior",
+          "init"
+        ],
         "linked_journal_entry": null,
         "deprecated": false,
-        "status": null,
+        "status": "stable",
         "visibility": null,
         "docstring_present": true,
         "metadata": {
@@ -171,7 +181,12 @@
       "fqname": "core.character_cards.save_character",
       "type": "function",
       "description": "Saves character data to a JSON file.",
-      "tags": [],
+      "tags": [
+        "system",
+        "char_data",
+        "runtime_behavior",
+        "input"
+      ],
       "source_file": "core\\character_cards.py",
       "test_coverage": false,
       "docstring_present": true,
@@ -182,14 +197,19 @@
         "module": "core.character_cards",
         "name": "save_character",
         "type": "function",
-        "lineno": 46,
+        "lineno": 47,
         "source_file": "core\\character_cards.py",
         "description": "Saves character data to a JSON file.",
-        "docstring_full": "Saves character data to a JSON file.",
-        "tags": [],
+        "docstring_full": "Saves character data to a JSON file.\n@tags: [\"system\", \"char_data\", \"runtime_behavior\", \"input\"]\n@status: \"stable\"",
+        "tags": [
+          "system",
+          "char_data",
+          "runtime_behavior",
+          "input"
+        ],
         "linked_journal_entry": null,
         "deprecated": false,
-        "status": null,
+        "status": "stable",
         "visibility": null,
         "docstring_present": true,
         "metadata": {
@@ -213,7 +233,12 @@
       "fqname": "core.character_cards.apply_status",
       "type": "function",
       "description": "Adds a status to the character if not already present.",
-      "tags": [],
+      "tags": [
+        "system",
+        "status_data",
+        "runtime_behavior",
+        "input"
+      ],
       "source_file": "core\\character_cards.py",
       "test_coverage": false,
       "docstring_present": true,
@@ -224,14 +249,19 @@
         "module": "core.character_cards",
         "name": "apply_status",
         "type": "function",
-        "lineno": 71,
+        "lineno": 74,
         "source_file": "core\\character_cards.py",
         "description": "Adds a status to the character if not already present.",
-        "docstring_full": "Adds a status to the character if not already present.",
-        "tags": [],
+        "docstring_full": "Adds a status to the character if not already present.\n@tags: [\"system\", \"status_data\", \"runtime_behavior\", \"input\"]\n@status: \"stable\"",
+        "tags": [
+          "system",
+          "status_data",
+          "runtime_behavior",
+          "input"
+        ],
         "linked_journal_entry": null,
         "deprecated": false,
-        "status": null,
+        "status": "stable",
         "visibility": null,
         "docstring_present": true,
         "metadata": {
@@ -256,7 +286,12 @@
       "fqname": "core.character_cards.update_stat",
       "type": "function",
       "description": "Modifies a stat by a delta value.",
-      "tags": [],
+      "tags": [
+        "system",
+        "char_data",
+        "runtime_behavior",
+        "input"
+      ],
       "source_file": "core\\character_cards.py",
       "test_coverage": false,
       "docstring_present": true,
@@ -267,14 +302,19 @@
         "module": "core.character_cards",
         "name": "update_stat",
         "type": "function",
-        "lineno": 90,
+        "lineno": 95,
         "source_file": "core\\character_cards.py",
         "description": "Modifies a stat by a delta value.",
-        "docstring_full": "Modifies a stat by a delta value.",
-        "tags": [],
+        "docstring_full": "Modifies a stat by a delta value.\n@tags: [\"system\", \"char_data\", \"runtime_behavior\", \"input\"]\n@status: \"stable\"",
+        "tags": [
+          "system",
+          "char_data",
+          "runtime_behavior",
+          "input"
+        ],
         "linked_journal_entry": null,
         "deprecated": false,
-        "status": null,
+        "status": "stable",
         "visibility": null,
         "docstring_present": true,
         "metadata": {
@@ -331,7 +371,12 @@
       "fqname": "core.loot_engine.roll_loot",
       "type": "function",
       "description": "Selects a random item from the provided loot table.",
-      "tags": [],
+      "tags": [
+        "inventory",
+        "item_data",
+        "runtime_behavior",
+        "input"
+      ],
       "source_file": "core\\loot_engine.py",
       "test_coverage": false,
       "docstring_present": true,
@@ -342,14 +387,19 @@
         "module": "core.loot_engine",
         "name": "roll_loot",
         "type": "function",
-        "lineno": 10,
+        "lineno": 9,
         "source_file": "core\\loot_engine.py",
         "description": "Selects a random item from the provided loot table.",
-        "docstring_full": "Selects a random item from the provided loot table.",
-        "tags": [],
+        "docstring_full": "Selects a random item from the provided loot table.\n@tags: [\"inventory\", \"item_data\", \"runtime_behavior\", \"input\"]\n@status: \"stable\"",
+        "tags": [
+          "inventory",
+          "item_data",
+          "runtime_behavior",
+          "input"
+        ],
         "linked_journal_entry": null,
         "deprecated": false,
-        "status": null,
+        "status": "stable",
         "visibility": null,
         "docstring_present": true,
         "metadata": {
@@ -404,7 +454,12 @@
       "fqname": "core.summary_export.generate_summary",
       "type": "function",
       "description": "Generates a formatted character status summary block for display.",
-      "tags": [],
+      "tags": [
+        "system",
+        "char_data",
+        "render_contract",
+        "input"
+      ],
       "source_file": "core\\summary_export.py",
       "test_coverage": false,
       "docstring_present": true,
@@ -415,14 +470,19 @@
         "module": "core.summary_export",
         "name": "generate_summary",
         "type": "function",
-        "lineno": 8,
+        "lineno": 7,
         "source_file": "core\\summary_export.py",
         "description": "Generates a formatted character status summary block for display.",
-        "docstring_full": "Generates a formatted character status summary block for display.",
-        "tags": [],
+        "docstring_full": "Generates a formatted character status summary block for display.\n@tags: [\"system\", \"char_data\", \"render_contract\", \"input\"]\n@status: \"stable\"",
+        "tags": [
+          "system",
+          "char_data",
+          "render_contract",
+          "input"
+        ],
         "linked_journal_entry": null,
         "deprecated": false,
-        "status": null,
+        "status": "stable",
         "visibility": null,
         "docstring_present": true,
         "metadata": {
@@ -607,7 +667,12 @@
       "fqname": "ui_cli.character_ menu.edit_stat",
       "type": "function",
       "description": "Directly sets a stat to a specific value.",
-      "tags": [],
+      "tags": [
+        "system",
+        "char_data",
+        "runtime_behavior",
+        "input"
+      ],
       "source_file": "ui_cli\\character_ menu.py",
       "test_coverage": false,
       "docstring_present": true,
@@ -618,14 +683,19 @@
         "module": "ui_cli.character_ menu",
         "name": "edit_stat",
         "type": "function",
-        "lineno": 8,
+        "lineno": 7,
         "source_file": "ui_cli\\character_ menu.py",
         "description": "Directly sets a stat to a specific value.",
-        "docstring_full": "Directly sets a stat to a specific value.",
-        "tags": [],
+        "docstring_full": "Directly sets a stat to a specific value.\n@tags: [\"system\", \"char_data\", \"runtime_behavior\", \"input\"]\n@status: \"stable\"",
+        "tags": [
+          "system",
+          "char_data",
+          "runtime_behavior",
+          "input"
+        ],
         "linked_journal_entry": null,
         "deprecated": false,
-        "status": null,
+        "status": "stable",
         "visibility": null,
         "docstring_present": true,
         "metadata": {
@@ -646,7 +716,12 @@
       "fqname": "ui_cli.character_ menu.add_inventory_item",
       "type": "function",
       "description": "Adds an item to the character's inventory.",
-      "tags": [],
+      "tags": [
+        "inventory",
+        "item_data",
+        "runtime_behavior",
+        "input"
+      ],
       "source_file": "ui_cli\\character_ menu.py",
       "test_coverage": false,
       "docstring_present": true,
@@ -657,14 +732,19 @@
         "module": "ui_cli.character_ menu",
         "name": "add_inventory_item",
         "type": "function",
-        "lineno": 34,
+        "lineno": 35,
         "source_file": "ui_cli\\character_ menu.py",
         "description": "Adds an item to the character's inventory.",
-        "docstring_full": "Adds an item to the character's inventory.",
-        "tags": [],
+        "docstring_full": "Adds an item to the character's inventory.\n@tags: [\"inventory\", \"item_data\", \"runtime_behavior\", \"input\"]\n@status: \"stable\"",
+        "tags": [
+          "inventory",
+          "item_data",
+          "runtime_behavior",
+          "input"
+        ],
         "linked_journal_entry": null,
         "deprecated": false,
-        "status": null,
+        "status": "stable",
         "visibility": null,
         "docstring_present": true,
         "metadata": {
@@ -684,7 +764,12 @@
       "fqname": "ui_cli.character_ menu.remove_inventory_item",
       "type": "function",
       "description": "Removes an item from the character's inventory.",
-      "tags": [],
+      "tags": [
+        "inventory",
+        "item_data",
+        "runtime_behavior",
+        "input"
+      ],
       "source_file": "ui_cli\\character_ menu.py",
       "test_coverage": false,
       "docstring_present": true,
@@ -695,14 +780,19 @@
         "module": "ui_cli.character_ menu",
         "name": "remove_inventory_item",
         "type": "function",
-        "lineno": 49,
+        "lineno": 52,
         "source_file": "ui_cli\\character_ menu.py",
         "description": "Removes an item from the character's inventory.",
-        "docstring_full": "Removes an item from the character's inventory.",
-        "tags": [],
+        "docstring_full": "Removes an item from the character's inventory.\n@tags: [\"inventory\", \"item_data\", \"runtime_behavior\", \"input\"]\n@status: \"stable\"",
+        "tags": [
+          "inventory",
+          "item_data",
+          "runtime_behavior",
+          "input"
+        ],
         "linked_journal_entry": null,
         "deprecated": false,
-        "status": null,
+        "status": "stable",
         "visibility": null,
         "docstring_present": true,
         "metadata": {
@@ -722,7 +812,12 @@
       "fqname": "ui_cli.character_ menu.add_trait",
       "type": "function",
       "description": "Adds a trait if not already present.",
-      "tags": [],
+      "tags": [
+        "system",
+        "char_data",
+        "runtime_behavior",
+        "input"
+      ],
       "source_file": "ui_cli\\character_ menu.py",
       "test_coverage": false,
       "docstring_present": true,
@@ -733,14 +828,19 @@
         "module": "ui_cli.character_ menu",
         "name": "add_trait",
         "type": "function",
-        "lineno": 65,
+        "lineno": 70,
         "source_file": "ui_cli\\character_ menu.py",
         "description": "Adds a trait if not already present.",
-        "docstring_full": "Adds a trait if not already present.",
-        "tags": [],
+        "docstring_full": "Adds a trait if not already present.\n@tags: [\"system\", \"char_data\", \"runtime_behavior\", \"input\"]\n@status: \"stable\"",
+        "tags": [
+          "system",
+          "char_data",
+          "runtime_behavior",
+          "input"
+        ],
         "linked_journal_entry": null,
         "deprecated": false,
-        "status": null,
+        "status": "stable",
         "visibility": null,
         "docstring_present": true,
         "metadata": {
@@ -760,7 +860,12 @@
       "fqname": "ui_cli.character_ menu.remove_trait",
       "type": "function",
       "description": "Removes a trait if present.",
-      "tags": [],
+      "tags": [
+        "system",
+        "char_data",
+        "runtime_behavior",
+        "input"
+      ],
       "source_file": "ui_cli\\character_ menu.py",
       "test_coverage": false,
       "docstring_present": true,
@@ -771,14 +876,19 @@
         "module": "ui_cli.character_ menu",
         "name": "remove_trait",
         "type": "function",
-        "lineno": 82,
+        "lineno": 89,
         "source_file": "ui_cli\\character_ menu.py",
         "description": "Removes a trait if present.",
-        "docstring_full": "Removes a trait if present.",
-        "tags": [],
+        "docstring_full": "Removes a trait if present.\n@tags: [\"system\", \"char_data\", \"runtime_behavior\", \"input\"]\n@status: \"stable\"",
+        "tags": [
+          "system",
+          "char_data",
+          "runtime_behavior",
+          "input"
+        ],
         "linked_journal_entry": null,
         "deprecated": false,
-        "status": null,
+        "status": "stable",
         "visibility": null,
         "docstring_present": true,
         "metadata": {
@@ -827,6 +937,14 @@
           "type": "calls"
         },
         {
+          "target": "ui_cli.main_menu",
+          "type": "calls"
+        },
+        {
+          "target": "ui_cli.main_menu.main_menu",
+          "type": "calls"
+        },
+        {
           "target": "core.summary_export.generate_summary",
           "type": "calls"
         },
@@ -851,14 +969,21 @@
           "type": "calls"
         }
       ],
-      "called_by_fqns": [],
+      "called_by_fqns": [
+        "ui_cli.main_menu",
+        "ui_cli.main_menu.CHARACTER_PATH",
+        "ui_cli.main_menu.LOOT_TABLE_PATH",
+        "ui_cli.main_menu.main_menu"
+      ],
       "calls_fqns": [
         "core.character_cards.apply_status",
         "core.character_cards.load_character",
         "core.character_cards.save_character",
         "core.character_cards.update_stat",
         "core.loot_engine.roll_loot",
-        "core.summary_export.generate_summary"
+        "core.summary_export.generate_summary",
+        "ui_cli.main_menu",
+        "ui_cli.main_menu.main_menu"
       ]
     },
     "ui_cli.main_menu.CHARACTER_PATH": {
@@ -894,6 +1019,14 @@
           "type": "calls"
         },
         {
+          "target": "ui_cli.main_menu",
+          "type": "calls"
+        },
+        {
+          "target": "ui_cli.main_menu.main_menu",
+          "type": "calls"
+        },
+        {
           "target": "core.summary_export.generate_summary",
           "type": "calls"
         },
@@ -925,7 +1058,9 @@
         "core.character_cards.save_character",
         "core.character_cards.update_stat",
         "core.loot_engine.roll_loot",
-        "core.summary_export.generate_summary"
+        "core.summary_export.generate_summary",
+        "ui_cli.main_menu",
+        "ui_cli.main_menu.main_menu"
       ]
     },
     "ui_cli.main_menu.LOOT_TABLE_PATH": {
@@ -961,6 +1096,14 @@
           "type": "calls"
         },
         {
+          "target": "ui_cli.main_menu",
+          "type": "calls"
+        },
+        {
+          "target": "ui_cli.main_menu.main_menu",
+          "type": "calls"
+        },
+        {
           "target": "core.summary_export.generate_summary",
           "type": "calls"
         },
@@ -992,14 +1135,21 @@
         "core.character_cards.save_character",
         "core.character_cards.update_stat",
         "core.loot_engine.roll_loot",
-        "core.summary_export.generate_summary"
+        "core.summary_export.generate_summary",
+        "ui_cli.main_menu",
+        "ui_cli.main_menu.main_menu"
       ]
     },
     "ui_cli.main_menu.main_menu": {
       "fqname": "ui_cli.main_menu.main_menu",
       "type": "function",
       "description": "Launches the main tracker menu for character interaction.",
-      "tags": [],
+      "tags": [
+        "system",
+        "char_data",
+        "runtime_behavior",
+        "input"
+      ],
       "source_file": "ui_cli\\main_menu.py",
       "test_coverage": false,
       "docstring_present": true,
@@ -1010,14 +1160,19 @@
         "module": "ui_cli.main_menu",
         "name": "main_menu",
         "type": "function",
-        "lineno": 21,
+        "lineno": 20,
         "source_file": "ui_cli\\main_menu.py",
         "description": "Launches the main tracker menu for character interaction.",
-        "docstring_full": "Launches the main tracker menu for character interaction.",
-        "tags": [],
+        "docstring_full": "Launches the main tracker menu for character interaction.\n@tags: [\"system\", \"char_data\", \"runtime_behavior\", \"input\"]\n@status: \"stable\"",
+        "tags": [
+          "system",
+          "char_data",
+          "runtime_behavior",
+          "input"
+        ],
         "linked_journal_entry": null,
         "deprecated": false,
-        "status": null,
+        "status": "stable",
         "visibility": null,
         "docstring_present": true,
         "metadata": {
@@ -1033,6 +1188,14 @@
           "type": "calls"
         },
         {
+          "target": "ui_cli.main_menu",
+          "type": "calls"
+        },
+        {
+          "target": "ui_cli.main_menu.main_menu",
+          "type": "calls"
+        },
+        {
           "target": "core.summary_export.generate_summary",
           "type": "calls"
         },
@@ -1057,15 +1220,53 @@
           "type": "calls"
         }
       ],
-      "called_by_fqns": [],
+      "called_by_fqns": [
+        "ui_cli.main_menu",
+        "ui_cli.main_menu.CHARACTER_PATH",
+        "ui_cli.main_menu.LOOT_TABLE_PATH",
+        "ui_cli.main_menu.main_menu"
+      ],
       "calls_fqns": [
         "core.character_cards.apply_status",
         "core.character_cards.load_character",
         "core.character_cards.save_character",
         "core.character_cards.update_stat",
         "core.loot_engine.roll_loot",
-        "core.summary_export.generate_summary"
+        "core.summary_export.generate_summary",
+        "ui_cli.main_menu",
+        "ui_cli.main_menu.main_menu"
       ]
+    },
+    "ui_cli._init_": {
+      "fqname": "ui_cli._init_",
+      "type": "module",
+      "description": "",
+      "tags": [],
+      "source_file": "ui_cli\\_init_.py",
+      "test_coverage": false,
+      "docstring_present": false,
+      "linked_journal_entry": null,
+      "is_orphaned": true,
+      "metadata": {
+        "fqname": "ui_cli._init_",
+        "module": "ui_cli._init_",
+        "name": "ui_cli._init_",
+        "type": "module",
+        "lineno": 1,
+        "source_file": "ui_cli\\_init_.py",
+        "description": "",
+        "docstring_full": "",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": false,
+        "metadata": {}
+      },
+      "links": [],
+      "called_by_fqns": [],
+      "calls_fqns": []
     },
     "utils.debug_utils": {
       "fqname": "utils.debug_utils",

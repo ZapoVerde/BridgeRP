@@ -3,10 +3,12 @@
 from typing import Optional
 from ParetoDebug.adapters.debug_adapter import get_debugger, generate_trace_id
 
-# @tags: ["system", "char_data", "runtime_behavior", "input"]
-# @status: "stable"
+
 def edit_stat(character: dict, field: str, value: int, trace_id: Optional[str] = None):
-    """Directly sets a stat to a specific value."""
+    """Directly sets a stat to a specific value.
+    @tags: ["system", "char_data", "runtime_behavior", "input"]
+    @status: "stable"
+    """
     trace_id = trace_id or generate_trace_id()
     dbg = get_debugger("ui_cli/character_menu")
 
@@ -29,10 +31,12 @@ def edit_stat(character: dict, field: str, value: int, trace_id: Optional[str] =
         trace_id=trace_id
     )
 
-# @tags: ["inventory", "item_data", "runtime_behavior", "input"]
-# @status: "stable"
+
 def add_inventory_item(character: dict, item: str, trace_id: Optional[str] = None):
-    """Adds an item to the character's inventory."""
+    """Adds an item to the character's inventory.
+    @tags: ["inventory", "item_data", "runtime_behavior", "input"]
+    @status: "stable"
+    """
     trace_id = trace_id or generate_trace_id()
     dbg = get_debugger("ui_cli/character_menu")
 
@@ -44,10 +48,12 @@ def add_inventory_item(character: dict, item: str, trace_id: Optional[str] = Non
         trace_id=trace_id
     )
 
-# @tags: ["inventory", "item_data", "runtime_behavior", "input"]
-# @status: "stable"
+
 def remove_inventory_item(character: dict, item: str, trace_id: Optional[str] = None):
-    """Removes an item from the character's inventory."""
+    """Removes an item from the character's inventory.
+    @tags: ["inventory", "item_data", "runtime_behavior", "input"]
+    @status: "stable"
+    """
     trace_id = trace_id or generate_trace_id()
     dbg = get_debugger("ui_cli/character_menu")
 
@@ -60,10 +66,12 @@ def remove_inventory_item(character: dict, item: str, trace_id: Optional[str] = 
             trace_id=trace_id
         )
 
-# @tags: ["system", "char_data", "runtime_behavior", "input"]
-# @status: "stable"
+
 def add_trait(character: dict, trait: str, trace_id: Optional[str] = None):
-    """Adds a trait if not already present."""
+    """Adds a trait if not already present.
+    @tags: ["system", "char_data", "runtime_behavior", "input"]
+    @status: "stable"
+    """
     trace_id = trace_id or generate_trace_id()
     dbg = get_debugger("ui_cli/character_menu")
 
@@ -77,10 +85,12 @@ def add_trait(character: dict, trait: str, trace_id: Optional[str] = None):
             trace_id=trace_id
         )
 
-# @tags: ["system", "char_data", "runtime_behavior", "input"]
-# @status: "stable"
+
 def remove_trait(character: dict, trait: str, trace_id: Optional[str] = None):
-    """Removes a trait if present."""
+    """Removes a trait if present.
+    @tags: ["system", "char_data", "runtime_behavior", "input"]
+    @status: "stable"
+    """
     trace_id = trace_id or generate_trace_id()
     dbg = get_debugger("ui_cli/character_menu")
 

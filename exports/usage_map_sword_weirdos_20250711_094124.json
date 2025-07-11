@@ -1,5 +1,5 @@
 {
-  "timestamp": "20250711_071637",
+  "timestamp": "20250711_094124",
   "project_name": "sword_weirdos",
   "usage_map": {
     "core.test_generate_trace_id": {
@@ -23,14 +23,21 @@
       ]
     },
     "ui_cli.main_menu": {
-      "used_by": [],
+      "used_by": [
+        "ui_cli.main_menu",
+        "ui_cli.main_menu.CHARACTER_PATH",
+        "ui_cli.main_menu.LOOT_TABLE_PATH",
+        "ui_cli.main_menu.main_menu"
+      ],
       "uses": [
         "core.character_cards.apply_status",
         "core.character_cards.load_character",
         "core.character_cards.save_character",
         "core.character_cards.update_stat",
         "core.loot_engine.roll_loot",
-        "core.summary_export.generate_summary"
+        "core.summary_export.generate_summary",
+        "ui_cli.main_menu",
+        "ui_cli.main_menu.main_menu"
       ]
     },
     "core.character_cards.apply_status": {
@@ -87,6 +94,24 @@
       ],
       "uses": []
     },
+    "ui_cli.main_menu.main_menu": {
+      "used_by": [
+        "ui_cli.main_menu",
+        "ui_cli.main_menu.CHARACTER_PATH",
+        "ui_cli.main_menu.LOOT_TABLE_PATH",
+        "ui_cli.main_menu.main_menu"
+      ],
+      "uses": [
+        "core.character_cards.apply_status",
+        "core.character_cards.load_character",
+        "core.character_cards.save_character",
+        "core.character_cards.update_stat",
+        "core.loot_engine.roll_loot",
+        "core.summary_export.generate_summary",
+        "ui_cli.main_menu",
+        "ui_cli.main_menu.main_menu"
+      ]
+    },
     "ui_cli.main_menu.CHARACTER_PATH": {
       "used_by": [],
       "uses": [
@@ -95,7 +120,9 @@
         "core.character_cards.save_character",
         "core.character_cards.update_stat",
         "core.loot_engine.roll_loot",
-        "core.summary_export.generate_summary"
+        "core.summary_export.generate_summary",
+        "ui_cli.main_menu",
+        "ui_cli.main_menu.main_menu"
       ]
     },
     "ui_cli.main_menu.LOOT_TABLE_PATH": {
@@ -106,18 +133,9 @@
         "core.character_cards.save_character",
         "core.character_cards.update_stat",
         "core.loot_engine.roll_loot",
-        "core.summary_export.generate_summary"
-      ]
-    },
-    "ui_cli.main_menu.main_menu": {
-      "used_by": [],
-      "uses": [
-        "core.character_cards.apply_status",
-        "core.character_cards.load_character",
-        "core.character_cards.save_character",
-        "core.character_cards.update_stat",
-        "core.loot_engine.roll_loot",
-        "core.summary_export.generate_summary"
+        "core.summary_export.generate_summary",
+        "ui_cli.main_menu",
+        "ui_cli.main_menu.main_menu"
       ]
     }
   }
