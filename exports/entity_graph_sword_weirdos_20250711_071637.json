@@ -1,0 +1,1133 @@
+{
+  "timestamp": "20250711_071637",
+  "project_name": "sword_weirdos",
+  "graph": {
+    "_init_": {
+      "fqname": "_init_",
+      "type": "module",
+      "description": "",
+      "tags": [],
+      "source_file": "_init_.py",
+      "test_coverage": false,
+      "docstring_present": false,
+      "linked_journal_entry": null,
+      "is_orphaned": true,
+      "metadata": {
+        "fqname": "_init_",
+        "module": "_init_",
+        "name": "_init_",
+        "type": "module",
+        "lineno": 1,
+        "source_file": "_init_.py",
+        "description": "",
+        "docstring_full": "",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": false,
+        "metadata": {}
+      },
+      "links": [],
+      "called_by_fqns": [],
+      "calls_fqns": []
+    },
+    "config.config": {
+      "fqname": "config.config",
+      "type": "module",
+      "description": "",
+      "tags": [],
+      "source_file": "config\\config.py",
+      "test_coverage": false,
+      "docstring_present": false,
+      "linked_journal_entry": null,
+      "is_orphaned": true,
+      "metadata": {
+        "fqname": "config.config",
+        "module": "config.config",
+        "name": "config.config",
+        "type": "module",
+        "lineno": 1,
+        "source_file": "config\\config.py",
+        "description": "",
+        "docstring_full": "",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": false,
+        "metadata": {}
+      },
+      "links": [],
+      "called_by_fqns": [],
+      "calls_fqns": []
+    },
+    "config.config.DEBUG_MODE": {
+      "fqname": "config.config.DEBUG_MODE",
+      "type": "variable",
+      "description": "",
+      "tags": [],
+      "source_file": "config\\config.py",
+      "test_coverage": false,
+      "docstring_present": false,
+      "linked_journal_entry": "",
+      "is_orphaned": true,
+      "metadata": {
+        "fqname": "config.config.DEBUG_MODE",
+        "module": "config.config",
+        "name": "DEBUG_MODE",
+        "type": "variable",
+        "lineno": 4,
+        "source_file": "config\\config.py",
+        "description": "",
+        "docstring_full": "",
+        "tags": [],
+        "linked_journal_entry": "",
+        "deprecated": false,
+        "status": "",
+        "visibility": "",
+        "docstring_present": false,
+        "metadata": {}
+      },
+      "links": [],
+      "called_by_fqns": [],
+      "calls_fqns": []
+    },
+    "core.character_cards": {
+      "fqname": "core.character_cards",
+      "type": "module",
+      "description": "",
+      "tags": [],
+      "source_file": "core\\character_cards.py",
+      "test_coverage": false,
+      "docstring_present": false,
+      "linked_journal_entry": null,
+      "is_orphaned": true,
+      "metadata": {
+        "fqname": "core.character_cards",
+        "module": "core.character_cards",
+        "name": "core.character_cards",
+        "type": "module",
+        "lineno": 1,
+        "source_file": "core\\character_cards.py",
+        "description": "",
+        "docstring_full": "",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": false,
+        "metadata": {}
+      },
+      "links": [],
+      "called_by_fqns": [],
+      "calls_fqns": []
+    },
+    "core.character_cards.load_character": {
+      "fqname": "core.character_cards.load_character",
+      "type": "function",
+      "description": "Loads character data from a JSON file.",
+      "tags": [],
+      "source_file": "core\\character_cards.py",
+      "test_coverage": false,
+      "docstring_present": true,
+      "linked_journal_entry": null,
+      "is_orphaned": false,
+      "metadata": {
+        "fqname": "core.character_cards.load_character",
+        "module": "core.character_cards",
+        "name": "load_character",
+        "type": "function",
+        "lineno": 10,
+        "source_file": "core\\character_cards.py",
+        "description": "Loads character data from a JSON file.",
+        "docstring_full": "Loads character data from a JSON file.",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": true,
+        "metadata": {
+          "args": [
+            "file_path"
+          ],
+          "returns": null
+        }
+      },
+      "links": [],
+      "called_by_fqns": [
+        "ui_cli.main_menu",
+        "ui_cli.main_menu.CHARACTER_PATH",
+        "ui_cli.main_menu.LOOT_TABLE_PATH",
+        "ui_cli.main_menu.main_menu"
+      ],
+      "calls_fqns": []
+    },
+    "core.character_cards.save_character": {
+      "fqname": "core.character_cards.save_character",
+      "type": "function",
+      "description": "Saves character data to a JSON file.",
+      "tags": [],
+      "source_file": "core\\character_cards.py",
+      "test_coverage": false,
+      "docstring_present": true,
+      "linked_journal_entry": null,
+      "is_orphaned": false,
+      "metadata": {
+        "fqname": "core.character_cards.save_character",
+        "module": "core.character_cards",
+        "name": "save_character",
+        "type": "function",
+        "lineno": 46,
+        "source_file": "core\\character_cards.py",
+        "description": "Saves character data to a JSON file.",
+        "docstring_full": "Saves character data to a JSON file.",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": true,
+        "metadata": {
+          "args": [
+            "file_path",
+            "data"
+          ],
+          "returns": null
+        }
+      },
+      "links": [],
+      "called_by_fqns": [
+        "ui_cli.main_menu",
+        "ui_cli.main_menu.CHARACTER_PATH",
+        "ui_cli.main_menu.LOOT_TABLE_PATH",
+        "ui_cli.main_menu.main_menu"
+      ],
+      "calls_fqns": []
+    },
+    "core.character_cards.apply_status": {
+      "fqname": "core.character_cards.apply_status",
+      "type": "function",
+      "description": "Adds a status to the character if not already present.",
+      "tags": [],
+      "source_file": "core\\character_cards.py",
+      "test_coverage": false,
+      "docstring_present": true,
+      "linked_journal_entry": null,
+      "is_orphaned": false,
+      "metadata": {
+        "fqname": "core.character_cards.apply_status",
+        "module": "core.character_cards",
+        "name": "apply_status",
+        "type": "function",
+        "lineno": 71,
+        "source_file": "core\\character_cards.py",
+        "description": "Adds a status to the character if not already present.",
+        "docstring_full": "Adds a status to the character if not already present.",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": true,
+        "metadata": {
+          "args": [
+            "character",
+            "status",
+            "trace_id"
+          ],
+          "returns": null
+        }
+      },
+      "links": [],
+      "called_by_fqns": [
+        "ui_cli.main_menu",
+        "ui_cli.main_menu.CHARACTER_PATH",
+        "ui_cli.main_menu.LOOT_TABLE_PATH",
+        "ui_cli.main_menu.main_menu"
+      ],
+      "calls_fqns": []
+    },
+    "core.character_cards.update_stat": {
+      "fqname": "core.character_cards.update_stat",
+      "type": "function",
+      "description": "Modifies a stat by a delta value.",
+      "tags": [],
+      "source_file": "core\\character_cards.py",
+      "test_coverage": false,
+      "docstring_present": true,
+      "linked_journal_entry": null,
+      "is_orphaned": false,
+      "metadata": {
+        "fqname": "core.character_cards.update_stat",
+        "module": "core.character_cards",
+        "name": "update_stat",
+        "type": "function",
+        "lineno": 90,
+        "source_file": "core\\character_cards.py",
+        "description": "Modifies a stat by a delta value.",
+        "docstring_full": "Modifies a stat by a delta value.",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": true,
+        "metadata": {
+          "args": [
+            "character",
+            "field",
+            "delta",
+            "trace_id"
+          ],
+          "returns": null
+        }
+      },
+      "links": [],
+      "called_by_fqns": [
+        "ui_cli.main_menu",
+        "ui_cli.main_menu.CHARACTER_PATH",
+        "ui_cli.main_menu.LOOT_TABLE_PATH",
+        "ui_cli.main_menu.main_menu"
+      ],
+      "calls_fqns": []
+    },
+    "core.loot_engine": {
+      "fqname": "core.loot_engine",
+      "type": "module",
+      "description": "",
+      "tags": [],
+      "source_file": "core\\loot_engine.py",
+      "test_coverage": false,
+      "docstring_present": false,
+      "linked_journal_entry": null,
+      "is_orphaned": true,
+      "metadata": {
+        "fqname": "core.loot_engine",
+        "module": "core.loot_engine",
+        "name": "core.loot_engine",
+        "type": "module",
+        "lineno": 1,
+        "source_file": "core\\loot_engine.py",
+        "description": "",
+        "docstring_full": "",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": false,
+        "metadata": {}
+      },
+      "links": [],
+      "called_by_fqns": [],
+      "calls_fqns": []
+    },
+    "core.loot_engine.roll_loot": {
+      "fqname": "core.loot_engine.roll_loot",
+      "type": "function",
+      "description": "Selects a random item from the provided loot table.",
+      "tags": [],
+      "source_file": "core\\loot_engine.py",
+      "test_coverage": false,
+      "docstring_present": true,
+      "linked_journal_entry": null,
+      "is_orphaned": false,
+      "metadata": {
+        "fqname": "core.loot_engine.roll_loot",
+        "module": "core.loot_engine",
+        "name": "roll_loot",
+        "type": "function",
+        "lineno": 10,
+        "source_file": "core\\loot_engine.py",
+        "description": "Selects a random item from the provided loot table.",
+        "docstring_full": "Selects a random item from the provided loot table.",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": true,
+        "metadata": {
+          "args": [
+            "loot_table",
+            "trace_id"
+          ],
+          "returns": null
+        }
+      },
+      "links": [],
+      "called_by_fqns": [
+        "ui_cli.main_menu",
+        "ui_cli.main_menu.CHARACTER_PATH",
+        "ui_cli.main_menu.LOOT_TABLE_PATH",
+        "ui_cli.main_menu.main_menu"
+      ],
+      "calls_fqns": []
+    },
+    "core.summary_export": {
+      "fqname": "core.summary_export",
+      "type": "module",
+      "description": "",
+      "tags": [],
+      "source_file": "core\\summary_export.py",
+      "test_coverage": false,
+      "docstring_present": false,
+      "linked_journal_entry": null,
+      "is_orphaned": true,
+      "metadata": {
+        "fqname": "core.summary_export",
+        "module": "core.summary_export",
+        "name": "core.summary_export",
+        "type": "module",
+        "lineno": 1,
+        "source_file": "core\\summary_export.py",
+        "description": "",
+        "docstring_full": "",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": false,
+        "metadata": {}
+      },
+      "links": [],
+      "called_by_fqns": [],
+      "calls_fqns": []
+    },
+    "core.summary_export.generate_summary": {
+      "fqname": "core.summary_export.generate_summary",
+      "type": "function",
+      "description": "Generates a formatted character status summary block for display.",
+      "tags": [],
+      "source_file": "core\\summary_export.py",
+      "test_coverage": false,
+      "docstring_present": true,
+      "linked_journal_entry": null,
+      "is_orphaned": false,
+      "metadata": {
+        "fqname": "core.summary_export.generate_summary",
+        "module": "core.summary_export",
+        "name": "generate_summary",
+        "type": "function",
+        "lineno": 8,
+        "source_file": "core\\summary_export.py",
+        "description": "Generates a formatted character status summary block for display.",
+        "docstring_full": "Generates a formatted character status summary block for display.",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": true,
+        "metadata": {
+          "args": [
+            "character",
+            "trace_id"
+          ],
+          "returns": null
+        }
+      },
+      "links": [],
+      "called_by_fqns": [
+        "ui_cli.main_menu",
+        "ui_cli.main_menu",
+        "ui_cli.main_menu.CHARACTER_PATH",
+        "ui_cli.main_menu.CHARACTER_PATH",
+        "ui_cli.main_menu.LOOT_TABLE_PATH",
+        "ui_cli.main_menu.LOOT_TABLE_PATH",
+        "ui_cli.main_menu.main_menu",
+        "ui_cli.main_menu.main_menu"
+      ],
+      "calls_fqns": []
+    },
+    "core.test_generate_trace_id": {
+      "fqname": "core.test_generate_trace_id",
+      "type": "module",
+      "description": "",
+      "tags": [],
+      "source_file": "core\\test_generate_trace_id.py",
+      "test_coverage": false,
+      "docstring_present": false,
+      "linked_journal_entry": null,
+      "is_orphaned": false,
+      "metadata": {
+        "fqname": "core.test_generate_trace_id",
+        "module": "core.test_generate_trace_id",
+        "name": "core.test_generate_trace_id",
+        "type": "module",
+        "lineno": 1,
+        "source_file": "core\\test_generate_trace_id.py",
+        "description": "",
+        "docstring_full": "",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": false,
+        "metadata": {}
+      },
+      "links": [
+        {
+          "target": "core.test_generate_trace_id",
+          "type": "calls"
+        },
+        {
+          "target": "core.test_generate_trace_id.test_generate_trace_id",
+          "type": "calls"
+        }
+      ],
+      "called_by_fqns": [
+        "core.test_generate_trace_id",
+        "core.test_generate_trace_id.test_generate_trace_id"
+      ],
+      "calls_fqns": [
+        "core.test_generate_trace_id",
+        "core.test_generate_trace_id.test_generate_trace_id"
+      ]
+    },
+    "core.test_generate_trace_id.test_generate_trace_id": {
+      "fqname": "core.test_generate_trace_id.test_generate_trace_id",
+      "type": "function",
+      "description": "",
+      "tags": [],
+      "source_file": "core\\test_generate_trace_id.py",
+      "test_coverage": false,
+      "docstring_present": false,
+      "linked_journal_entry": null,
+      "is_orphaned": false,
+      "metadata": {
+        "fqname": "core.test_generate_trace_id.test_generate_trace_id",
+        "module": "core.test_generate_trace_id",
+        "name": "test_generate_trace_id",
+        "type": "function",
+        "lineno": 3,
+        "source_file": "core\\test_generate_trace_id.py",
+        "description": "",
+        "docstring_full": "",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": false,
+        "metadata": {
+          "args": [],
+          "returns": null
+        }
+      },
+      "links": [
+        {
+          "target": "core.test_generate_trace_id",
+          "type": "calls"
+        },
+        {
+          "target": "core.test_generate_trace_id.test_generate_trace_id",
+          "type": "calls"
+        }
+      ],
+      "called_by_fqns": [
+        "core.test_generate_trace_id",
+        "core.test_generate_trace_id.test_generate_trace_id"
+      ],
+      "calls_fqns": [
+        "core.test_generate_trace_id",
+        "core.test_generate_trace_id.test_generate_trace_id"
+      ]
+    },
+    "core._init_": {
+      "fqname": "core._init_",
+      "type": "module",
+      "description": "",
+      "tags": [],
+      "source_file": "core\\_init_.py",
+      "test_coverage": false,
+      "docstring_present": false,
+      "linked_journal_entry": null,
+      "is_orphaned": true,
+      "metadata": {
+        "fqname": "core._init_",
+        "module": "core._init_",
+        "name": "core._init_",
+        "type": "module",
+        "lineno": 1,
+        "source_file": "core\\_init_.py",
+        "description": "",
+        "docstring_full": "",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": false,
+        "metadata": {}
+      },
+      "links": [],
+      "called_by_fqns": [],
+      "calls_fqns": []
+    },
+    "ui_cli.character_ menu": {
+      "fqname": "ui_cli.character_ menu",
+      "type": "module",
+      "description": "",
+      "tags": [],
+      "source_file": "ui_cli\\character_ menu.py",
+      "test_coverage": false,
+      "docstring_present": false,
+      "linked_journal_entry": null,
+      "is_orphaned": true,
+      "metadata": {
+        "fqname": "ui_cli.character_ menu",
+        "module": "ui_cli.character_ menu",
+        "name": "ui_cli.character_ menu",
+        "type": "module",
+        "lineno": 1,
+        "source_file": "ui_cli\\character_ menu.py",
+        "description": "",
+        "docstring_full": "",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": false,
+        "metadata": {}
+      },
+      "links": [],
+      "called_by_fqns": [],
+      "calls_fqns": []
+    },
+    "ui_cli.character_ menu.edit_stat": {
+      "fqname": "ui_cli.character_ menu.edit_stat",
+      "type": "function",
+      "description": "Directly sets a stat to a specific value.",
+      "tags": [],
+      "source_file": "ui_cli\\character_ menu.py",
+      "test_coverage": false,
+      "docstring_present": true,
+      "linked_journal_entry": null,
+      "is_orphaned": true,
+      "metadata": {
+        "fqname": "ui_cli.character_ menu.edit_stat",
+        "module": "ui_cli.character_ menu",
+        "name": "edit_stat",
+        "type": "function",
+        "lineno": 8,
+        "source_file": "ui_cli\\character_ menu.py",
+        "description": "Directly sets a stat to a specific value.",
+        "docstring_full": "Directly sets a stat to a specific value.",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": true,
+        "metadata": {
+          "args": [
+            "character",
+            "field",
+            "value",
+            "trace_id"
+          ],
+          "returns": null
+        }
+      },
+      "links": [],
+      "called_by_fqns": [],
+      "calls_fqns": []
+    },
+    "ui_cli.character_ menu.add_inventory_item": {
+      "fqname": "ui_cli.character_ menu.add_inventory_item",
+      "type": "function",
+      "description": "Adds an item to the character's inventory.",
+      "tags": [],
+      "source_file": "ui_cli\\character_ menu.py",
+      "test_coverage": false,
+      "docstring_present": true,
+      "linked_journal_entry": null,
+      "is_orphaned": true,
+      "metadata": {
+        "fqname": "ui_cli.character_ menu.add_inventory_item",
+        "module": "ui_cli.character_ menu",
+        "name": "add_inventory_item",
+        "type": "function",
+        "lineno": 34,
+        "source_file": "ui_cli\\character_ menu.py",
+        "description": "Adds an item to the character's inventory.",
+        "docstring_full": "Adds an item to the character's inventory.",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": true,
+        "metadata": {
+          "args": [
+            "character",
+            "item",
+            "trace_id"
+          ],
+          "returns": null
+        }
+      },
+      "links": [],
+      "called_by_fqns": [],
+      "calls_fqns": []
+    },
+    "ui_cli.character_ menu.remove_inventory_item": {
+      "fqname": "ui_cli.character_ menu.remove_inventory_item",
+      "type": "function",
+      "description": "Removes an item from the character's inventory.",
+      "tags": [],
+      "source_file": "ui_cli\\character_ menu.py",
+      "test_coverage": false,
+      "docstring_present": true,
+      "linked_journal_entry": null,
+      "is_orphaned": true,
+      "metadata": {
+        "fqname": "ui_cli.character_ menu.remove_inventory_item",
+        "module": "ui_cli.character_ menu",
+        "name": "remove_inventory_item",
+        "type": "function",
+        "lineno": 49,
+        "source_file": "ui_cli\\character_ menu.py",
+        "description": "Removes an item from the character's inventory.",
+        "docstring_full": "Removes an item from the character's inventory.",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": true,
+        "metadata": {
+          "args": [
+            "character",
+            "item",
+            "trace_id"
+          ],
+          "returns": null
+        }
+      },
+      "links": [],
+      "called_by_fqns": [],
+      "calls_fqns": []
+    },
+    "ui_cli.character_ menu.add_trait": {
+      "fqname": "ui_cli.character_ menu.add_trait",
+      "type": "function",
+      "description": "Adds a trait if not already present.",
+      "tags": [],
+      "source_file": "ui_cli\\character_ menu.py",
+      "test_coverage": false,
+      "docstring_present": true,
+      "linked_journal_entry": null,
+      "is_orphaned": true,
+      "metadata": {
+        "fqname": "ui_cli.character_ menu.add_trait",
+        "module": "ui_cli.character_ menu",
+        "name": "add_trait",
+        "type": "function",
+        "lineno": 65,
+        "source_file": "ui_cli\\character_ menu.py",
+        "description": "Adds a trait if not already present.",
+        "docstring_full": "Adds a trait if not already present.",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": true,
+        "metadata": {
+          "args": [
+            "character",
+            "trait",
+            "trace_id"
+          ],
+          "returns": null
+        }
+      },
+      "links": [],
+      "called_by_fqns": [],
+      "calls_fqns": []
+    },
+    "ui_cli.character_ menu.remove_trait": {
+      "fqname": "ui_cli.character_ menu.remove_trait",
+      "type": "function",
+      "description": "Removes a trait if present.",
+      "tags": [],
+      "source_file": "ui_cli\\character_ menu.py",
+      "test_coverage": false,
+      "docstring_present": true,
+      "linked_journal_entry": null,
+      "is_orphaned": true,
+      "metadata": {
+        "fqname": "ui_cli.character_ menu.remove_trait",
+        "module": "ui_cli.character_ menu",
+        "name": "remove_trait",
+        "type": "function",
+        "lineno": 82,
+        "source_file": "ui_cli\\character_ menu.py",
+        "description": "Removes a trait if present.",
+        "docstring_full": "Removes a trait if present.",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": true,
+        "metadata": {
+          "args": [
+            "character",
+            "trait",
+            "trace_id"
+          ],
+          "returns": null
+        }
+      },
+      "links": [],
+      "called_by_fqns": [],
+      "calls_fqns": []
+    },
+    "ui_cli.main_menu": {
+      "fqname": "ui_cli.main_menu",
+      "type": "module",
+      "description": "",
+      "tags": [],
+      "source_file": "ui_cli\\main_menu.py",
+      "test_coverage": false,
+      "docstring_present": false,
+      "linked_journal_entry": null,
+      "is_orphaned": false,
+      "metadata": {
+        "fqname": "ui_cli.main_menu",
+        "module": "ui_cli.main_menu",
+        "name": "ui_cli.main_menu",
+        "type": "module",
+        "lineno": 1,
+        "source_file": "ui_cli\\main_menu.py",
+        "description": "",
+        "docstring_full": "",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": false,
+        "metadata": {}
+      },
+      "links": [
+        {
+          "target": "core.character_cards.load_character",
+          "type": "calls"
+        },
+        {
+          "target": "core.summary_export.generate_summary",
+          "type": "calls"
+        },
+        {
+          "target": "core.character_cards.update_stat",
+          "type": "calls"
+        },
+        {
+          "target": "core.character_cards.apply_status",
+          "type": "calls"
+        },
+        {
+          "target": "core.loot_engine.roll_loot",
+          "type": "calls"
+        },
+        {
+          "target": "core.summary_export.generate_summary",
+          "type": "calls"
+        },
+        {
+          "target": "core.character_cards.save_character",
+          "type": "calls"
+        }
+      ],
+      "called_by_fqns": [],
+      "calls_fqns": [
+        "core.character_cards.apply_status",
+        "core.character_cards.load_character",
+        "core.character_cards.save_character",
+        "core.character_cards.update_stat",
+        "core.loot_engine.roll_loot",
+        "core.summary_export.generate_summary"
+      ]
+    },
+    "ui_cli.main_menu.CHARACTER_PATH": {
+      "fqname": "ui_cli.main_menu.CHARACTER_PATH",
+      "type": "variable",
+      "description": "",
+      "tags": [],
+      "source_file": "ui_cli\\main_menu.py",
+      "test_coverage": false,
+      "docstring_present": false,
+      "linked_journal_entry": "",
+      "is_orphaned": false,
+      "metadata": {
+        "fqname": "ui_cli.main_menu.CHARACTER_PATH",
+        "module": "ui_cli.main_menu",
+        "name": "CHARACTER_PATH",
+        "type": "variable",
+        "lineno": 16,
+        "source_file": "ui_cli\\main_menu.py",
+        "description": "",
+        "docstring_full": "",
+        "tags": [],
+        "linked_journal_entry": "",
+        "deprecated": false,
+        "status": "",
+        "visibility": "",
+        "docstring_present": false,
+        "metadata": {}
+      },
+      "links": [
+        {
+          "target": "core.character_cards.load_character",
+          "type": "calls"
+        },
+        {
+          "target": "core.summary_export.generate_summary",
+          "type": "calls"
+        },
+        {
+          "target": "core.character_cards.update_stat",
+          "type": "calls"
+        },
+        {
+          "target": "core.character_cards.apply_status",
+          "type": "calls"
+        },
+        {
+          "target": "core.loot_engine.roll_loot",
+          "type": "calls"
+        },
+        {
+          "target": "core.summary_export.generate_summary",
+          "type": "calls"
+        },
+        {
+          "target": "core.character_cards.save_character",
+          "type": "calls"
+        }
+      ],
+      "called_by_fqns": [],
+      "calls_fqns": [
+        "core.character_cards.apply_status",
+        "core.character_cards.load_character",
+        "core.character_cards.save_character",
+        "core.character_cards.update_stat",
+        "core.loot_engine.roll_loot",
+        "core.summary_export.generate_summary"
+      ]
+    },
+    "ui_cli.main_menu.LOOT_TABLE_PATH": {
+      "fqname": "ui_cli.main_menu.LOOT_TABLE_PATH",
+      "type": "variable",
+      "description": "",
+      "tags": [],
+      "source_file": "ui_cli\\main_menu.py",
+      "test_coverage": false,
+      "docstring_present": false,
+      "linked_journal_entry": "",
+      "is_orphaned": false,
+      "metadata": {
+        "fqname": "ui_cli.main_menu.LOOT_TABLE_PATH",
+        "module": "ui_cli.main_menu",
+        "name": "LOOT_TABLE_PATH",
+        "type": "variable",
+        "lineno": 17,
+        "source_file": "ui_cli\\main_menu.py",
+        "description": "",
+        "docstring_full": "",
+        "tags": [],
+        "linked_journal_entry": "",
+        "deprecated": false,
+        "status": "",
+        "visibility": "",
+        "docstring_present": false,
+        "metadata": {}
+      },
+      "links": [
+        {
+          "target": "core.character_cards.load_character",
+          "type": "calls"
+        },
+        {
+          "target": "core.summary_export.generate_summary",
+          "type": "calls"
+        },
+        {
+          "target": "core.character_cards.update_stat",
+          "type": "calls"
+        },
+        {
+          "target": "core.character_cards.apply_status",
+          "type": "calls"
+        },
+        {
+          "target": "core.loot_engine.roll_loot",
+          "type": "calls"
+        },
+        {
+          "target": "core.summary_export.generate_summary",
+          "type": "calls"
+        },
+        {
+          "target": "core.character_cards.save_character",
+          "type": "calls"
+        }
+      ],
+      "called_by_fqns": [],
+      "calls_fqns": [
+        "core.character_cards.apply_status",
+        "core.character_cards.load_character",
+        "core.character_cards.save_character",
+        "core.character_cards.update_stat",
+        "core.loot_engine.roll_loot",
+        "core.summary_export.generate_summary"
+      ]
+    },
+    "ui_cli.main_menu.main_menu": {
+      "fqname": "ui_cli.main_menu.main_menu",
+      "type": "function",
+      "description": "Launches the main tracker menu for character interaction.",
+      "tags": [],
+      "source_file": "ui_cli\\main_menu.py",
+      "test_coverage": false,
+      "docstring_present": true,
+      "linked_journal_entry": null,
+      "is_orphaned": false,
+      "metadata": {
+        "fqname": "ui_cli.main_menu.main_menu",
+        "module": "ui_cli.main_menu",
+        "name": "main_menu",
+        "type": "function",
+        "lineno": 21,
+        "source_file": "ui_cli\\main_menu.py",
+        "description": "Launches the main tracker menu for character interaction.",
+        "docstring_full": "Launches the main tracker menu for character interaction.",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": true,
+        "metadata": {
+          "args": [
+            "trace_id"
+          ],
+          "returns": null
+        }
+      },
+      "links": [
+        {
+          "target": "core.character_cards.load_character",
+          "type": "calls"
+        },
+        {
+          "target": "core.summary_export.generate_summary",
+          "type": "calls"
+        },
+        {
+          "target": "core.character_cards.update_stat",
+          "type": "calls"
+        },
+        {
+          "target": "core.character_cards.apply_status",
+          "type": "calls"
+        },
+        {
+          "target": "core.loot_engine.roll_loot",
+          "type": "calls"
+        },
+        {
+          "target": "core.summary_export.generate_summary",
+          "type": "calls"
+        },
+        {
+          "target": "core.character_cards.save_character",
+          "type": "calls"
+        }
+      ],
+      "called_by_fqns": [],
+      "calls_fqns": [
+        "core.character_cards.apply_status",
+        "core.character_cards.load_character",
+        "core.character_cards.save_character",
+        "core.character_cards.update_stat",
+        "core.loot_engine.roll_loot",
+        "core.summary_export.generate_summary"
+      ]
+    },
+    "utils.debug_utils": {
+      "fqname": "utils.debug_utils",
+      "type": "module",
+      "description": "",
+      "tags": [],
+      "source_file": "utils\\debug_utils.py",
+      "test_coverage": false,
+      "docstring_present": false,
+      "linked_journal_entry": null,
+      "is_orphaned": true,
+      "metadata": {
+        "fqname": "utils.debug_utils",
+        "module": "utils.debug_utils",
+        "name": "utils.debug_utils",
+        "type": "module",
+        "lineno": 1,
+        "source_file": "utils\\debug_utils.py",
+        "description": "",
+        "docstring_full": "",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": false,
+        "metadata": {}
+      },
+      "links": [],
+      "called_by_fqns": [],
+      "calls_fqns": []
+    },
+    "utils._init_": {
+      "fqname": "utils._init_",
+      "type": "module",
+      "description": "",
+      "tags": [],
+      "source_file": "utils\\_init_.py",
+      "test_coverage": false,
+      "docstring_present": false,
+      "linked_journal_entry": null,
+      "is_orphaned": true,
+      "metadata": {
+        "fqname": "utils._init_",
+        "module": "utils._init_",
+        "name": "utils._init_",
+        "type": "module",
+        "lineno": 1,
+        "source_file": "utils\\_init_.py",
+        "description": "",
+        "docstring_full": "",
+        "tags": [],
+        "linked_journal_entry": null,
+        "deprecated": false,
+        "status": null,
+        "visibility": null,
+        "docstring_present": false,
+        "metadata": {}
+      },
+      "links": [],
+      "called_by_fqns": [],
+      "calls_fqns": []
+    }
+  }
+}

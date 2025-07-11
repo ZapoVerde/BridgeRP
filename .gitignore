@@ -1,0 +1,39 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+env/
+venv/
+.env/
+
+# Logs and cache
+*.log
+logs/
+.cache/
+*.tmp
+
+# Test artifacts
+.coverage
+htmlcov/
+.tox/
+pytest_cache/
+
+# Editor folders
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Image outputs
+outputs/
+*.png
+*.jpg
+
+# Project-specific
+character_state.json
+render_config.json

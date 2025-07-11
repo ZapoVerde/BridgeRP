@@ -1,0 +1,63 @@
+[
+  {
+    "group": "domain",
+    "values": [
+      "dialogue",
+      "emotion",
+      "relationship",
+      "scene",
+      "style",
+      "pose",
+      "expression",
+      "outfit",
+      "inventory",
+      "combat",
+      "narration",
+      "system"
+    ]
+  },
+  {
+    "group": "data_affinity",
+    "values": [
+      "char_data",
+      "dialogue_data",
+      "pose_data",
+      "expression_data",
+      "scene_data",
+      "style_data",
+      "item_data",
+      "combat_data",
+      "status_data"
+    ]
+  },
+  {
+    "group": "semantic_role",
+    "values": [
+      "render_contract",
+      "runtime_behavior",
+      "narrative_logic",
+      "data_schema"
+    ]
+  },
+  {
+    "group": "trigger_surface",
+    "values": [
+      "input",
+      "scene_start",
+      "char_speaks",
+      "char_moves",
+      "emotion_shift",
+      "timed",
+      "init",
+      "external"
+    ]
+  },
+  {
+    "__reserved_groups__": [
+      "domain",
+      "data_affinity",
+      "semantic_role",
+      "trigger_surface"
+    ]
+  }
+]
